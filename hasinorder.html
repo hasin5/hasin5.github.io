@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+<style>
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background: #732235;
+}
+div {
+  height: 200px;
+  background-size: 99% 99%;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  font-size: 75px;
+  color: Gold;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: Red;
+  margin: 0px 0 70px 0;
+}
+p {
+  color: rgba(255,226,0,1);
+  background: pink;
+  background: linear-gradient(b<a href="hasu pro 3.html" id="" title="hasu pro 3">hasu pro 3</a>ottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(255,0,255,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+input {
+font-size: 22px;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.first{
+  background-image: url("https://img.hoodline.com/2022/8/Daves_3-3.webp");
+}
+.second{
+  background-image: url("https://whatnowphoenix.com/wp-content/uploads/sites/7/2022/04/Daves-Hot-Chicken-is-About-to-Hatch-Up-its-First-Arizona-Location.jpg");
+}
+.dessert{
+  background-image: url("https://sallysbakingaddiction.com/wp-content/uploads/2019/06/homemade-tiramisu-2.jpg");
+}
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+<h1>Chicken on the House</h1>
+<h2>Fall in love after the first crunch</h2>
+<div class="first">
+<input type="number" min="0" style="width: 50px" class="quantities">
+  <p>Fire on your tongue <span class="price">$14</span><br />
+  <small>BK Chicken Fries are a fried chicken product sold by the international fast-food restaurant chain Burger King. At the time of their introduction in 2005, the company had intended Chicken Fries to be one of their larger, adult-oriented products made with higher-quality ingredients than their standard menu items. Additionally, the product further targeted the snacking and convenience food markets with a specific packaging design that was intended to be easier to handle and fit into automotive cup holders.  </small></p>
+</div>
+
+<div class="second">
+<input type="number" min="0" style="width: 50px" class="quantities">
+  <p>Break the ice with fried chicken!<span class="price">$22</span><br />
+  <small>
+Image result for fries
+It's said that this dish was discovered by American soldiers in Belgium during World War I and, since the dominant language of southern Belgium is French, they dubbed the tasty potatoes “French” fries.</small></p>
+</div>
+ 
+<div class="dessert">
+<input type="number" min="0" style="width: 50px" class="quantities">
+  <p>Tuscan Trifle <span class="price">$8</span><br />
+  <small>Tiramisu is a coffee-flavoured Italian dessert. It is made of ladyfingers dipped in coffee, layered with a whipped mixture of eggs, sugar, and mascarpone cheese, flavoured with cocoa. The recipe has been adapted into many varieties of cakes and other desserts.</small></p>
+</div>
+  <br><br>
+  <input id="Name" placeholder="Your Name">
+  <input id="Email" id= "Email" placeholder="Your Email">
+  <input id="submit" type=submit>
+  <br><br>
+
+<script>
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+
+</body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  import { getDatabase, ref, set } from
+  "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCgam2CGBcUrcl17eFjtOTmWgOzBT-bqDk",
+    authDomain: "hasuuu-prooo-3333.firebaseapp.com",
+    databaseURL: "https://hasuuu-prooo-3333-default-rtdb.firebaseio.com",
+    projectId: "hasuuu-prooo-3333",
+    storageBucket: "hasuuu-prooo-3333.appspot.com",
+    messagingSenderId: "70048296410",
+    appId: "1:70048296410:web:cdcb9455cc80ac7e6564e3",
+    measurementId: "G-SJ4S3N6FHX"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+const Name = document.querySelector("#Name") 
+const Email = document.querySelector("#Email")
+document.querySelector('#submit').addEventListener('click', Submit)
+const quantities = document.querySelectorAll(".quantities")
+  const prices = document.querySelectorAll(".price")
+const itemsList = ["Fire on your tongue", "Break the ice with fried chicken!", "Tuscan Trifle"]	  
+  	function Submit() {
+  	  const timestamp = buildTimestamp()
+		let total = 0
+		let cart = { }
+		for (let i=0; i<quantities.length; i=i+1) {
+		if (quantities[i].value != "0" && quantities[i].value != "") {
+		let price = prices[i].innerHTML.replace('$', '')
+		total = total + quantities[i].value * price
+		cart[itemsList[i]] = parseInt(quantities[i].value)
+		}
+		quantities[i].value = ""
+		}
+	  
+  	  set(ref(db, timestamp), {
+  		  Name: Name.value,
+  	      email: Email.value,
+		  cart: cart,
+		  totalPrice: total,
+		  paid: "not yet",
+  	  });
+
+  	  Name.value = ""
+  	  Email.value = ""
+	  
+	  
+	  }
+	  
+	  
+	  
+	  
+	  function buildTimestamp() {
+	  	  const now = new Date();
+	  	  let timestamp = now.getFullYear().toString() + "/";
+	  	  //const month = now.toLocaleString('default', { month: 'long' });
+
+	  	  let month = now.getMonth()+1   //add 1 because Javascript uses 0 for January
+	  	  month = month.toString()
+	  	  month = addLeadingZero(month)
+	  	  timestamp += month + "/"; 
+
+	  	  let date = now.getDate().toString()
+	  	  date = addLeadingZero(date)
+	  	  timestamp += date + "/";
+
+	  	  let hours = now.getHours().toString()
+	  	  hours = addLeadingZero(hours)
+	  	  timestamp += hours + ":";
+
+	  	  let minutes = now.getMinutes().toString()
+	  	  minutes = addLeadingZero(minutes)
+	  	  timestamp += minutes + ":";
+
+	  	  let seconds = now.getSeconds().toString()
+	  	  seconds = addLeadingZero(seconds)
+	  	  timestamp += seconds;
+  
+	  	  return timestamp
+	  	}
+	
+	  	function addLeadingZero(units) {
+	  		if (units.length < 2) {
+	  			units = "0" + units
+	  		}
+	  		return units
+	  	}
+</script>
